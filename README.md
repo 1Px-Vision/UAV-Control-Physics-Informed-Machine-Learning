@@ -4,4 +4,4 @@ Integrating Dynamic Mode Decomposition (DMD) control and Physics-Informed Neural
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/PINN_M.jpg)
 
-The process of integrating DMD with PINN for UAV position and orientation estimation is as follows: The sequence illustrates the training process, including the loss function and neural network architecture
+The process of integrating DMD with PINN for UAV position and orientation estimation is as follows: The sequence illustrates the training process, including the loss function and neural network architecture.
