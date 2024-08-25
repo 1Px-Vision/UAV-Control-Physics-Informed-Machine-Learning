@@ -28,7 +28,17 @@ The objective is to command the drone to fly in a square pattern, covering 10 me
 
 ## Drone API
 
-To interact with both the drone simulator and a real drone, you will use the UdaciDrone API. This API facilitates communication between Python and the drone simulator, bridging your code and the drone's operations. A fundamental component of the API is the Drone superclass, which provides the necessary commands for controlling the drone in the simulator. It also enables you to register callbacks or listeners that respond to changes in the drone's attributes. The objective of this project is to create a subclass derived from the Drone class, implementing a state machine that can autonomously fly the drone in a box pattern. A starting point for this subclass is provided in the backyard_flyer.py file.
+To interact with both the drone simulator and a real drone, you will use the [UdaciDrone API](https://udacity.github.io/udacidrone/). This API facilitates communication between Python and the drone simulator, bridging your code and the drone's operations. A fundamental component of the API is the Drone superclass, which provides the necessary commands for controlling the drone in the simulator. It also enables you to register callbacks or listeners that respond to changes in the drone's attributes. The objective of this project is to create a subclass derived from the Drone class, implementing a state machine that can autonomously fly the drone in a box pattern. A starting point for this subclass is provided in the ````backyard_flyer.py```` file.
+
+## Drone Attributes
+The Drone class contains the following attributes that you may find useful for this project:
+
+* ````self.armed````: boolean for the drone's armed state
+* ````self.guided````: boolean for the drone's guided state (if the script has control or not)
+* ````self.local_position````: a vector of the current position in NED coordinates
+* ````self.local_velocity````: a vector of the current velocity in NED coordinates
+  
+For a detailed list of all of the attributes of the Drone class check out the [UdaciDrone API documentation](https://udacity.github.io/udacidrone/).
 
 ## Included in this repository 
 
