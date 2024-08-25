@@ -17,9 +17,18 @@ This project involves developing a state machine using event-driven programming 
 #### Step 1: Download the Simulator
 You can download the Udacity FCND Simulator from this [link](https://github.com/udacity/FCND-Simulator-Releases/releases). 
 
+#### Step 2: Set up your Python Environment
+If you haven't already, set up your Python environment and get all the relevant packages installed using Anaconda following the instructions in [this repository](https://github.com/udacity/FCND-Term1-Starter-Kit)
+
+#### Task
+
+The objective is to command the drone to fly in a square pattern, covering 10 meters on each side at an altitude of 3 meters. This flight path will be executed in two modes: first using manual control, and then using autonomous control. For manual control, follow the instructions provided with the simulator. Autonomous control will be implemented using an event-driven state machine. Each callback function will evaluate the transition criteria based on the current state. When these criteria are met, the system will transition to the next state, issuing the necessary commands to the drone. A visualization of this final flight plan is shown in the gif below:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Backyard_Flyer/backyard_square.gif)
 
+## Drone API
+
+To interact with both the drone simulator and a real drone, you will use the UdaciDrone API. This API facilitates communication between Python and the drone simulator, bridging your code and the drone's operations. A fundamental component of the API is the Drone superclass, which provides the necessary commands for controlling the drone in the simulator. It also enables you to register callbacks or listeners that respond to changes in the drone's attributes. The objective of this project is to create a subclass derived from the Drone class, implementing a state machine that can autonomously fly the drone in a box pattern. A starting point for this subclass is provided in the backyard_flyer.py file.
 
 ## Included in this repository 
 
