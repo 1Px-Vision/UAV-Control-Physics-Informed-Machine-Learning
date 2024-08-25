@@ -54,10 +54,18 @@ The UdaciDrone API's Drone class also contains function to be able to send comma
 * ````land()````: Land in the current position
 * ````stop()````: Terminate the connection with the drone and close the telemetry log
 
+## Message Logging
+The telemetry data is automatically logged in ````Logs\TLog.txt```` for logs created when running python ````backyard_flyer.py````. Each row contains a comma-separated representation of each message. The first row is the incoming message type. The second row is the time. The rest of the rows contain all the message properties. The types of messages relevant to this project are:
+
+* ````MsgID.STATE````: time (ms), armed (bool), guided (bool)
+* ````MsgID.GLOBAL_POSITION````: time (ms), longitude (deg), latitude (deg), altitude (meter)
+* ````MsgID.GLOBAL_HOME````: time (ms), longitude (deg), latitude (deg), altitude (meter)
+* ````MsgID.LOCAL_POSITION````: time (ms), north (meter), east (meter), down (meter)
+* ````MsgID.LOCAL_VELOCITY````: time (ms), north (meter), east (meter), down (meter)
+
 ## Included in this repository 
 
-* The code used to Camera based 2D feature tracking on src directory with MidTermProject_Camera_Student.cpp, dataStructures.h, matching2D.hpp, matching2D_Student.cpp file containing the challenge for this project
-* Result File with image Near-side outlier, Far-side outlier, and Multiple-side outlier
-* results.csv test FP.6
+* The code used backyard_flyer.py containing the challenge for this project
+* File Test_drone_U.ipynb code using read to file TLog.txt with information position and velocity
 * This README.md file
 
