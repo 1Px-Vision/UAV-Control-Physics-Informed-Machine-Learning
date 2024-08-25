@@ -40,6 +40,20 @@ The Drone class contains the following attributes that you may find useful for t
   
 For a detailed list of all of the attributes of the Drone class check out the [UdaciDrone API documentation](https://udacity.github.io/udacidrone/).
 
+## Outgoing Commands
+The UdaciDrone API's Drone class also contains function to be able to send commands to the drone. Here is a list of commands that you may find useful during the project:
+
+* ````connect()````: Starts receiving messages from the drone. Blocks the code until the first message is received
+* ````start()````: Start receiving messages from the drone. If the connection is not threaded, this will block the code.
+* ````arm()````: Arms the motors of the quad, the rotors will spin slowly. The drone cannot takeoff until armed first
+* ````disarm()````: Disarms the motors of the quad. The quadcopter cannot be disarmed in the air
+* ````take_control()````: Set the command mode of the quad to guided
+* ````release_control()````: Set the command mode of the quad to manual
+* ````cmd_position(north, east, down, heading)````: Command the drone to travel to the local position (north, east, down). Also commands the quad to maintain a specified heading
+* ````takeoff(target_altitude)````: Takeoff from the current location to the specified global altitude
+* ````land()````: Land in the current position
+* ````stop()````: Terminate the connection with the drone and close the telemetry log
+
 ## Included in this repository 
 
 * The code used to Camera based 2D feature tracking on src directory with MidTermProject_Camera_Student.cpp, dataStructures.h, matching2D.hpp, matching2D_Student.cpp file containing the challenge for this project
