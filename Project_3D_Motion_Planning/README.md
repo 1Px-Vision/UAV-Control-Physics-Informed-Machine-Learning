@@ -7,7 +7,6 @@ It involves planning and executing a drone's trajectory in an urban environment.
 ## Project description
 The following is the main code used on the project:
 
-* motion_planning_from_seed_project.py: This is the based implementation for this project provided by Udacity on its seed project.
 * planning_utils_from_seed_project.py: It was also provided by Udacity on its seed project. It contains an implementation of the A* search algorithm and utility functions.
 * motion_planning.py: This version extends the provided implementation with the following features:
    * The global home location can be found in the colliders.csv file.
