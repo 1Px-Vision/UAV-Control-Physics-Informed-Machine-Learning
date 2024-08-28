@@ -50,5 +50,17 @@ I then transform the global position into the local ECEF frame using the ````glo
 curr_local_pos = global_to_local(curr_global_pos, self.global_home)
 ````
 
+#### 3. Set grid start position from local position
+
+Retrieve the current start position and use it as the initial point for our path-planning task. I have created a method called ````get_gridrelative_position()```` to facilitate the conversion from the local frame to the grid-relative frame, which is relative to the map center.
+````
+grid_start = get_gridrelative_position(curr_local_pos[0:2], offsets)
+````
+
+Previously, I stored the offsets obtained from the ````create_grid```` method to use in converting NED coordinates to grid coordinates
+````
+offsets = (north_offset, east_offset)
+````
+
 
 
