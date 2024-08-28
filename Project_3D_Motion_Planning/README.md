@@ -35,6 +35,10 @@ lat0, lon0 = get_latlon_fromfile('colliders.csv')
 ````
 Next, I use those values to establish the current home position by calling
 
+````
+self.set_home_position(lon0, lat0, 0)
+````
+
 #### 2. Set your current local position
 
 To determine the local position, which is relative to a pre-established global home position, I'll first need to obtain the current global position in the geodetic frame.
@@ -47,7 +51,4 @@ curr_local_pos = global_to_local(curr_global_pos, self.global_home)
 ````
 
 
-````
-self.set_home_position(lon0, lat0, 0)
-````
 
