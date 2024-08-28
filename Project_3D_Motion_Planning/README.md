@@ -4,7 +4,7 @@ It involves planning and executing a drone's trajectory in an urban environment.
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_3D_Motion_Planning/drone_flying.gif)
 
-##Project Details
+## Project Details
 
 ### Explain the Starter Code
 #### 1. Explain the functionality of what's provided in motion_planning.py and planning_utils.py
