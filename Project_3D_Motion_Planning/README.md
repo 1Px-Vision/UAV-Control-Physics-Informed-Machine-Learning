@@ -30,3 +30,12 @@ valid_actions: Identifies all possible actions from a given grid cell, based on 
 #### 1. Set your global home position
 
 I developed a function named ````get_latlon_fromfile```` which reads the first line of ````colliders.csv```` to extract the latitude and longitude of the initial start position in the geodetic frame. After retrieving these values, I converted them into floating-point numbers.
+````
+lat0, lon0 = get_latlon_fromfile('colliders.csv')
+````
+Next, I use those values to establish the current home position by calling
+
+````
+self.set_home_position(lon0, lat0, 0)
+````
+
