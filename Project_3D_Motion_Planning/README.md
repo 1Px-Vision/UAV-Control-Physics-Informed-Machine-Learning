@@ -26,3 +26,7 @@ valid_actions: Identifies all possible actions from a given grid cell, based on 
 * **a_star:** Implements the A* pathfinding algorithm for a grid-based layout, using specified start and goal positions, a chosen heuristic, and the grid.
 * **heuristic:** Provides a cost heuristic used by the A* algorithm to estimate the relative cost between two points.
 
+### Implementing Your Path Planning Algorithm
+#### 1. Set your global home position
+
+I developed a function named ````get_latlon_fromfile```` which reads the first line of ````colliders.csv```` to extract the latitude and longitude of the initial start position in the geodetic frame. After retrieving these values, I converted them into floating-point numbers.
