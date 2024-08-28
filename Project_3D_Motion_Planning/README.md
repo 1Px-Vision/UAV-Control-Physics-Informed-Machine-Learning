@@ -17,3 +17,12 @@ Compared to the ````backyard flyer```` implementation, the ````motion_planning.p
 * It loads obstacle data from a file.
 * It defines specific start and goal positions.
 * It employs the A* algorithm to navigate the configuration space, using a given heuristic as the cost function to establish a path from the start to the goal state.
+
+The ````planning_utils.py```` module comprises several utility functions utilized by the path_plan method. These functions include:
+
+* **create_grid:** Generates a 2.5D grid representation based on obstacle data (similar to the format in 'colliders.csv'), considering the drone's altitude and a specified safety distance.
+* **Action:** An enumeration class that defines a three-element tuple for each of the four cardinal directions on a grid (North, South, East, West). Each element of the enumeration specifies a grid-based position change (N, E) and an associated cost.
+valid_actions: Identifies all possible actions from a given grid cell, based on the grid configuration and the current node's position.
+* **a_star:** Implements the A* pathfinding algorithm for a grid-based layout, using specified start and goal positions, a chosen heuristic, and the grid.
+* **heuristic:** Provides a cost heuristic used by the A* algorithm to estimate the relative cost between two points.
+
