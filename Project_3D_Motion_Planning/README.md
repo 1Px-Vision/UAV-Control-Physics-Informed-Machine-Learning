@@ -7,5 +7,5 @@ It involves planning and executing a drone's trajectory in an urban environment.
 ## Project Details
 
 ### Explain the Starter Code
-#### 1. Explain the functionality of what's provided in motion_planning.py and planning_utils.py
+#### 1. Explain the functionality of what's provided in ````motion_planning.py```` and ````planning_utils.py````
 
