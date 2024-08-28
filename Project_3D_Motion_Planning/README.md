@@ -35,6 +35,18 @@ lat0, lon0 = get_latlon_fromfile('colliders.csv')
 ````
 Next, I use those values to establish the current home position by calling
 
+#### 2. Set your current local position
+
+To determine the local position, which is relative to a pre-established global home position, I'll first need to obtain the current global position in the geodetic frame.
+````
+curr_global_pos = (self._longitude, self._latitude, self._altitude)
+````
+I then transform the global position into the local ECEF frame using the ````global_to_local()```` method, which is imported from ````planning_utils.py````
+````
+curr_local_pos = global_to_local(curr_global_pos, self.global_home)
+````
+
+
 ````
 self.set_home_position(lon0, lat0, 0)
 ````
