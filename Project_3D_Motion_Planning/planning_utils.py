@@ -1,7 +1,7 @@
 from enum import Enum
 from queue import PriorityQueue
 import numpy as np
-
+import re
 
 def create_grid(data, drone_altitude, safety_distance):
     """
@@ -197,3 +197,15 @@ def get_latlon_fromfile(input_file):
         lon = float(parts[3])
 
         return lat, lon
+
+def read_home(filename):
+    """
+    Reads home (lat, lon) from the first line of the `file`.
+    """
+    with open(filename) as f:
+        first_line = f.readline()
+    match = re.match(r'^lat0 (.*), lon0 (.*)$', first_line)
+    if match:
+        lat = match.group(1)
+        lon = match.group(2)
+    return np.fromstring(f'{lat},{lon}', dtype='float64', sep=',')
