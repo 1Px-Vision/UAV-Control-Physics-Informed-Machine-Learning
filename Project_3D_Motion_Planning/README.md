@@ -62,5 +62,46 @@ Previously, I stored the offsets obtained from the ````create_grid```` method to
 offsets = (north_offset, east_offset)
 ````
 
+#### 4. Set grid goal position from geodetic coords
+To enhance the flexibility of specifying the goal location, I introduced two program input parameters: goal_long and goal_lat.
+````
+goal_lon='290'
+goal_lat='300'
+goal_alt='-0.147'
+drone = MotionPlanning(conn, goal_lon, goal_lat)
+````
+
+Next, I set the goal position using the input parameter values, converted these to NED coordinates, and then determined their position relative to the grid.
+````
+custom_goal_pos = (-122.398414, 37.7939265, 0)
+goal_local = global_to_local(custom_goal_pos, self.global_home)[0:2]
+grid_goal = get_gridrelative_position(goal_local, offsets)
+````
+
+#### 5. Modify A* to include diagonal motion (or replace A* altogether)
+
+In the file ````planning_utils.py````, I updated the Action enumeration to incorporate additional actions along with their corresponding costs:
+````
+NORTH_WEST = (-1, -1, np.sqrt(2))
+NORTH_EAST = (-1, 1, np.sqrt(2))
+SOUTH_WEST = (1, -1, np.sqrt(2))
+SOUTH_EAST = (1, 1, np.sqrt(2))
+````
+Furthermore, I incorporated the corresponding logic into the valid actions method:
+
+````
+# Diagonal Actions
+if x - 1 < 0 or y - 1 < 0 or grid[x - 1, y - 1] == 1:
+    valid_actions.remove(Action.NORTH_WEST)
+if x - 1 < 0 or y + 1 > m or grid[x - 1, y + 1] == 1:
+    valid_actions.remove(Action.NORTH_EAST)
+if x + 1 > n or y - 1 < 0 or grid[x + 1, y - 1] == 1:
+    valid_actions.remove(Action.SOUTH_WEST)  
+if x + 1 > n or y + 1 > m or grid[x + 1, y + 1] == 1:
+    valid_actions.remove(Action.SOUTH_EAST)
+````
+
+
+
 
 
