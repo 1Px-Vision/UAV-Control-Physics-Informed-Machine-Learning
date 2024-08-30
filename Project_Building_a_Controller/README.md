@@ -30,6 +30,9 @@ All the C++ code can be found in the /cpp directory. The more notable files incl
 
 ### Scenario 1: Intro
 
+In this scenario, we modify the drone's mass in the /cpp/config/QuadControlParams.txt file until it achieves brief hovering
+
+
 ### Scenario 2: Body rate and roll/pitch control
 
 ### Scenario 3: Position/velocity and yaw angle control
