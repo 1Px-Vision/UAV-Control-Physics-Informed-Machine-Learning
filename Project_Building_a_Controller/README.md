@@ -19,3 +19,18 @@ Based on the initial project from the FCND, our task is to control a simulated d
 
 This section represents the more complex aspect of the project. While parameter tuning in Python was challenging, the complexity here is higher in order of magnitude. The C++ implementation is just a small part of this demanding task. In this context, the simulator imposes more realistic constraints on the implementation, and issues can arise if these constraints are not handled correctly. Even more intriguing are the situations where the implementation is slightly off, not entirely incorrect. Udacity provides a seed project that includes the simulator implementation and placeholders for the controller code. The seed project’s README.md offers guidance on running the project and details the tasks required to implement the controller. There are five scenarios that we need to address. The simulator runs in a loop for each scenario and displays on the standard output whether the scenario has passed or not.
 
+All the C++ code can be found in the /cpp directory. The more notable files include:
+
+* **/cpp/config/QuadControlParams.txt:** This file holds the configuration settings for the controller. You can modify it while the simulator is running, and the simulator will update those parameters in the next execution loop.
+
+**/cpp/src/QuadControl.cpp:** This file is central to the project, as it contains the implementation of the controller. However, I should note that most of the effort required to pass the scenarios is spent on parameter tuning, rather than the code in this file itself.
+
+### Scenario 1: Intro
+
+### Scenario 2: Body rate and roll/pitch control
+
+### Scenario 3: Position/velocity and yaw angle control
+
+### Scenario 4: Non-idealities and robustness
+
+### Scenario 5: Tracking trajectories
