@@ -23,7 +23,7 @@ All the C++ code can be found in the /cpp directory. The more notable files incl
 
 * **/cpp/config/QuadControlParams.txt:** This file holds the configuration settings for the controller. You can modify it while the simulator is running, and the simulator will update those parameters in the next execution loop.
 
-**/cpp/src/QuadControl.cpp:** This file is central to the project, as it contains the implementation of the controller. However, I should note that most of the effort required to pass the scenarios is spent on parameter tuning, rather than the code in this file itself.
+* **/cpp/src/QuadControl.cpp:** This file is central to the project, as it contains the implementation of the controller. However, I should note that most of the effort required to pass the scenarios is spent on parameter tuning, rather than the code in this file itself.
 
 ### Scenario 1: Intro
 
