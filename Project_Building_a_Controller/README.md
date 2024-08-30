@@ -20,10 +20,6 @@ Tuning the controller for this trajectory is challenging. Initially, it's diffic
 
 When the scenario successfully passes the test, you will see this line in the standard output:
 
-````
-PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
-````
-
 ## C++ Implementation
 
 This section represents the more complex aspect of the project. While parameter tuning in Python was challenging, the complexity here is higher in order of magnitude. The C++ implementation is just a small part of this demanding task. In this context, the simulator imposes more realistic constraints on the implementation, and issues can arise if these constraints are not handled correctly. Even more intriguing are the situations where the implementation is slightly off, not entirely incorrect. Udacity provides a seed project that includes the simulator implementation and placeholders for the controller code. The seed project’s README.md offers guidance on running the project and details the tasks required to implement the controller. There are five scenarios that we need to address. The simulator runs in a loop for each scenario and displays on the standard output whether the scenario has passed or not.
@@ -39,6 +35,11 @@ All the C++ code can be found in the /cpp directory. The more notable files incl
 In this scenario, we modify the drone's mass in the /cpp/config/QuadControlParams.txt file until it achieves brief hovering
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_scenario_1.gif)
+
+````
+PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
+````
+
 ### Scenario 2: Body rate and roll/pitch control
 
 ### Scenario 3: Position/velocity and yaw angle control
