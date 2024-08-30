@@ -57,10 +57,10 @@ F_1 to F_4 represent the motor thrusts, while 𝜏_𝑥, 𝜏_𝑦, and 𝜏_�
 
 $$
 \begin{align*}
-\quad \dot{p}_c = k_p (p_c - p) & (1)\\
-\quad \dot{q}_c = k_p (q_c - q) & (2)\\
-\quad \dot{r}_c = R_{13} & (3)\\
-\quad \dot{r}_c = R_{23} & (4)\\
+(1) & \quad p_c^c = k_p(p_c^b - p_c^c) \\
+(2) & \quad q_c^c = k_p(q_c^b - q_c^c) \\
+(3) & \quad p_c^b = R_{13} \\
+(4) & \quad q_c^b = R_{23} \\
 \end{align*}
 $$
 
