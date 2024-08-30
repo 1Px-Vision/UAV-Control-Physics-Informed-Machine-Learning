@@ -67,7 +67,7 @@ $$
 But the problem is you need to output roll and pitch rates; so, there is another equation to apply:
 
 $$
-(1) \quad 
+\quad 
 \begin{pmatrix}
 p_c \\
 q_c 
