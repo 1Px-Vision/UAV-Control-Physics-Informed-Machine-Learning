@@ -14,6 +14,9 @@ Based on the initial project from the FCND, our task is to control a simulated d
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/python-simulator-1.gif)
 
+Tuning the controller for this trajectory is challenging. Initially, it's difficult to predict the outcomes. The trajectory resembles something like this:
+
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Trajectory.jpg)
 
 ## C++ Implementation
 
