@@ -66,6 +66,26 @@ $$
 
 But the problem is you need to output roll and pitch rates; so, there is another equation to apply:
 
+$$
+(1) \quad 
+\begin{pmatrix}
+p_c \\
+q_c 
+\end{pmatrix}
+=
+\frac{1}{R_{33}}
+\begin{pmatrix}
+R_{21} & -R_{11} \\
+R_{22} & -R_{12}
+\end{pmatrix}
+\begin{pmatrix}
+\ddot{x}_c \\
+\ddot{y}_c 
+\end{pmatrix}
+$$
+
+
+
 ### Scenario 3: Position/velocity and yaw angle control
 
 ### Scenario 4: Non-idealities and robustness
