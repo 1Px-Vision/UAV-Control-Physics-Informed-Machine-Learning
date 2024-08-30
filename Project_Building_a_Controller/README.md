@@ -83,7 +83,7 @@ R_{22} & -R_{12}
 \end{pmatrix}
 $$
 
-
+It is important to note that the received thrust needs to be inverted and converted to acceleration before applying the equations. Once the implementation is complete, you should begin tuning the **kpBank** and **kpPQR** parameters until the drone achieves a relatively stable upward flight.
 
 ### Scenario 3: Position/velocity and yaw angle control
 
