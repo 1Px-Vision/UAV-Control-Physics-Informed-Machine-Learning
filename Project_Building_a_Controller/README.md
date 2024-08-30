@@ -64,6 +64,7 @@ $$
 \end{align*}
 $$
 
+But the problem is you need to output roll and pitch rates; so, there is another equation to apply:
 
 ### Scenario 3: Position/velocity and yaw angle control
 
