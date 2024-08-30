@@ -85,6 +85,15 @@ $$
 
 It is important to note that the received thrust needs to be inverted and converted to acceleration before applying the equations. Once the implementation is complete, you should begin tuning the **kpBank** and **kpPQR** parameters until the drone achieves a relatively stable upward flight.
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_Scenario_2.gif)
+
+When the scenario is passing the test, you should see this line on the standard output:
+
+````
+PASS: ABS(Quad.Roll) was less than 0.025000 for at least 0.750000 seconds
+PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
+````
+
 ### Scenario 3: Position/velocity and yaw angle control
 
 ### Scenario 4: Non-idealities and robustness
