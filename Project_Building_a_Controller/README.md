@@ -53,6 +53,9 @@ $$
 \end{align*}
 $$
 
+F_1 to F_4 represent the motor thrusts, while 𝜏_𝑥, 𝜏_𝑦, and 𝜏_𝑧 denote the moments about each axis. 𝐹_𝑡 is the total thrust, 𝜅 is the drag-to-thrust ratio, and 𝑙 is the drone arm length divided by the square root of two. These equations are derived from classroom lectures. It's important to note a couple of considerations: for instance, in NED (North-East-Down) coordinates, the z-axis is inverted, which explains why the moment about the z-axis is inverted here. Additionally, during implementation, it is observed that 𝐹_3 and 𝐹_4 are swapped. In other words, 𝐹_3 in the lectures corresponds to 𝐹_4 in the simulator, and vice versa. The next step involves implementing the BodyRateControl method using a proportional (P) controller along with the moments of inertia. At this stage, the kpPQR parameter needs to be fine-tuned to prevent the drone from flipping. However, before doing this, it's essential to command some thrust in the altitude control, as thrust is no longer commanded in the GenerateMotorCommands. A suitable value for thrust is thrust=mass×CONST_GRAVITY.
+
+Once this is completed, we proceed to the RollPitchControl method. This implementation requires applying a set of equations. A P controller should be applied to the 𝑅_13 and 𝑅_23 elements of the rotation matrix, which relate body-frame accelerations to world-frame accelerations.
 
 ### Scenario 3: Position/velocity and yaw angle control
 
