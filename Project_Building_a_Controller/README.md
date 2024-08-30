@@ -71,8 +71,7 @@ $$
 \begin{pmatrix}
 p_c \\
 q_c 
-\end{pmatrix}
-=
+\end{pmatrix}=
 \frac{1}{R_{33}}
 \begin{pmatrix}
 R_{21} & -R_{11} \\
