@@ -46,10 +46,10 @@ Now it's time to start coding. The GenerateMotorCommands method needs to be impl
 
 $$
 \begin{align*}
-(1) & \quad F_1 + F_4 - F_2 - F_3 = \frac{n_x}{l} = \tau_x \\
-(2) & \quad F_1 + F_2 - F_3 - F_4 = \frac{n_y}{l} = \tau_y \\
-(3) & \quad F_1 - F_2 + F_3 - F_4 = -\frac{n_z}{k} = \tau_z \\
-(4) & \quad F_1 + F_2 + F_3 + F_4 = n_z = \dot{t}_z \\
+\quad F_1 + F_4 - F_2 - F_3 = \frac{n_x}{l} = \tau_x & (1) \\
+\quad F_1 + F_2 - F_3 - F_4 = \frac{n_y}{l} = \tau_y & (2) \\
+\quad F_1 - F_2 + F_3 - F_4 = -\frac{n_z}{k} = \tau_z & (3) \\
+\quad F_1 + F_2 + F_3 + F_4 = n_z = \dot{t}_z & (4) \\
 \end{align*}
 $$
 
