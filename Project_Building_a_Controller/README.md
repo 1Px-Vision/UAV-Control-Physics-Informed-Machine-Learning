@@ -42,6 +42,18 @@ PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 second
 
 ### Scenario 2: Body rate and roll/pitch control
 
+Now it's time to start coding. The GenerateMotorCommands method needs to be implemented by solving these equations:
+
+$$
+\begin{align*}
+(1) & \quad F_1 + F_4 - F_2 - F_3 = \frac{n_x}{l} = \tau_x \\
+(2) & \quad F_1 + F_2 - F_3 - F_4 = \frac{n_y}{l} = \tau_y \\
+(3) & \quad F_1 - F_2 + F_3 - F_4 = -\frac{n_z}{k} = \tau_z \\
+(4) & \quad F_1 + F_2 + F_3 + F_4 = n_z = \dot{t}_z \\
+\end{align*}
+$$
+
+
 ### Scenario 3: Position/velocity and yaw angle control
 
 ### Scenario 4: Non-idealities and robustness
