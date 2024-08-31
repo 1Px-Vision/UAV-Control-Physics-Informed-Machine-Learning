@@ -106,8 +106,7 @@ $$
 \ddot{y} \\
 \ddot{z}
 \end{pmatrix}
-=
-\begin{pmatrix}
+=\begin{pmatrix}
 0 \\
 0 \\
 g
