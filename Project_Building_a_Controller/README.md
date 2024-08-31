@@ -147,6 +147,15 @@ PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
 
 ### Scenario 4: Non-idealities and robustness
 
-This is an interesting scenario, we need to add an integral component to the altitude controller, transitioning it from a PD to a PID controller. When I did this, everything stopped working correctly, and I had to re-tune the system, starting from scenario -1. Remember, patience is a virtue. Take your time and try again. If you find yourself getting frustrated, reach out to your peers for help—they might have valuable hints to share.
+This is an interesting scenario, we need to add an integral component to the altitude controller, transitioning it from a PD to a PID controller. When I did this, everything stopped working correctly, and I had to re-tune the system, starting from scenario -1. Remember, patience is a virtue. Take your time and try again.
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_scenario_4.gif)
+
+When the scenario is passing the test, you should see this line on the standard output:
+
+````
+PASS: ABS(Quad1.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad2.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
+````
 ### Scenario 5: Tracking trajectories
