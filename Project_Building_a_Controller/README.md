@@ -127,6 +127,7 @@ R_{33}
 \end{align*}
 $$
 
+To test this, return to scenario 2 and verify that the drone remains stable and does not fall. In this scenario, the PID controller is set to be inactive, and the thrust should be calculated as the product of the mass and ````CONST_GRAVITY````.
 
 ### Scenario 4: Non-idealities and robustness
 
