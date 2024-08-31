@@ -100,7 +100,7 @@ PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
 
 $$
 \begin{align*}
-(1) & \quad 
+\quad 
 \begin{pmatrix}
 \ddot{x} \\
 \ddot{y} \\
@@ -116,7 +116,7 @@ g
 \begin{pmatrix}
 R_{13} \\
 R_{23} \\
-R_{33}
+R_{33} & (1)
 \end{pmatrix} \\
 \quad \ddot{x}^c = R_{13} & (2) \\
 \quad \ddot{y}^c = R_{23} & (3) \\
