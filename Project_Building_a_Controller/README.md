@@ -159,3 +159,5 @@ PASS: ABS(Quad2.PosFollowErr) was less than 0.100000 for at least 1.500000 secon
 PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 seconds
 ````
 ### Scenario 5: Tracking trajectories
+
+This is the final mandatory scenario where the drone must follow a specific trajectory. This scenario will expose any remaining errors in your code and may require further parameter tuning. Keep in mind that there are comments within the controller methods about the limits that need to be enforced in the system. Implementing these limits is essential to successfully pass this scenario
