@@ -14,3 +14,10 @@ The project utilizes the following sensors:
 * **Magnetometer:** Measures the heading or yaw angle
 
 In addition to the Extended Kalman Filter, a complementary filter is used to track the Roll and Pitch angles. The implementation of the EKF and Complementary Filter, including the framework, mathematical formulas, and pseudocode, is primarily based on concepts outlined in the paper Estimation for Quadrotors.
+
+## Project description
+
+### Implement Estimator
+
+**1. Determine the Standard Deviation of Measurement Noise for GPS X Data and Accelerometer X Data:**
+In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
