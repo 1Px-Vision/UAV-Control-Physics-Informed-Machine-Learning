@@ -116,8 +116,8 @@ g
 \begin{pmatrix}
 R_{13} \\
 R_{23} \\
-R_{33} & (1)
-\end{pmatrix} \\
+R_{33}
+\end{pmatrix}  & (1)\\
 \quad \ddot{x}^c = R_{13} & (2) \\
 \quad \ddot{y}^c = R_{23} & (3) \\
 \quad \ddot{z}^c = R_{33} & (4) \\
