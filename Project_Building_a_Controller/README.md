@@ -133,6 +133,7 @@ To test this, return to scenario 2 and verify that the drone remains stable and 
 
 * **YawControl:** This case is simpler, as it employs a P controller. It's recommended to keep the yaw angle within the range [−π,π] for optimization.
 
+After implementing all the code, set the values of **kpYaw**, **kpPosXY**, **kpVelXY**, **kpPosZ**, and **kpVelZ** to zero. Take a deep breath, and begin tuning the controllers, starting with the altitude controller and moving on to the yaw controller. Be patient, as this process takes time.
 
 ### Scenario 4: Non-idealities and robustness
 
