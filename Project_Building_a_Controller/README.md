@@ -96,6 +96,39 @@ PASS: ABS(Quad.Omega.X) was less than 2.500000 for at least 0.750000 seconds
 
 ### Scenario 3: Position/velocity and yaw angle control
 
+* **AltitudeControl:** This method utilizes a PD controller to regulate acceleration, which determines the thrust required to maintain the desired altitude.
+
+$$
+\begin{align*}
+(1) & \quad 
+\begin{pmatrix}
+\ddot{x} \\
+\ddot{y} \\
+\ddot{z}
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 \\
+0 \\
+g
+\end{pmatrix}
++
+\frac{T}{m}
+\begin{pmatrix}
+R_{13} \\
+R_{23} \\
+R_{33}
+\end{pmatrix} \\
+(2) & \quad \ddot{x}^c = R_{13} \\
+(3) & \quad \ddot{y}^c = R_{23} \\
+(4) & \quad \ddot{z}^c = R_{33} \\
+(5) & \quad \ddot{z}_d = \ddot{z} - g \\
+(6) & \quad c = \frac{\ddot{z}_d - g}{\ddot{z}^c} \\
+(7) & \quad \ddot{z}_d = k_p (z - z_d) + k_d (\dot{z} - \dot{z}_d) + \ddot{z}
+\end{align*}
+$$
+
+
 ### Scenario 4: Non-idealities and robustness
 
 ### Scenario 5: Tracking trajectories
