@@ -21,3 +21,19 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 
 **1. Determine the Standard Deviation of Measurement Noise for GPS X Data and Accelerometer X Data:**
 In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
+
+
+**2. Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function:**. I utilized the Quaternion class along with the 
+````IntegrateBodyRate()```` method to perform the integration of body rates. Afterward, I converted the results back to Euler angles using 
+````estAttitude.ToEulerRPY()````.
+
+
+**3. Implement the Prediction Step for the Estimator**
+
+To complete this step, follow these procedures:
+
+* Implement the PredictState() function.
+* Implement the GetRbgPrime() function.
+* Implement the Predict() function.
+  
+These functions collectively handle all aspects of the prediction phase in the estimator.
