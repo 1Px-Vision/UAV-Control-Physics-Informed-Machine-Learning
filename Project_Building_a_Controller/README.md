@@ -172,6 +172,15 @@ PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 secon
 
 ## Flight Evaluation
 
+### The Python implementation meets the minimum flight performance metrics:
+
+````
+Maximum Horizontal Error:  1.896498169249138
+Maximum Vertical Error:  0.636822964449316
+Mission Time:  2.121786 seconds
+Mission Success:  True
+````
+
 ### The implementation pass scenarios 1 - 5 on the C++ simulator:
 
 ````
