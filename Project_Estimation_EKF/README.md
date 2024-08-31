@@ -37,3 +37,9 @@ To complete this step, follow these procedures:
 * Implement the Predict() function.
   
 These functions collectively handle all aspects of the prediction phase in the estimator.
+
+**4. Implement the magnetometer update**
+
+**5. Implement the GPS update**
+
+## Flight Evaluation
