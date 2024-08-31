@@ -172,6 +172,40 @@ PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 secon
 
 ## Implemented Controller
 
+**1. Body Rate Control:**
+
+* Implemented in both Python and C++.
+* In Python, this control is implemented as a proportional controller in the body_rate_control method within /python/controller.py, from lines 179 to 195.
+* In C++, it is implemented in the ````QuadControl::BodyRateControl```` method located in /cpp/src/QuadControl, from lines 95 to 121.
+
+**2.Roll Pitch Control:**
+
+* Implemented in both Python and C++.
+* In Python, this functionality is handled by the roll_pitch_controller method in /python/controller.py, covering lines 142 to 177.
+* In C++, it is implemented in the ````QuadControl::RollPitchControl```` method found in /cpp/src/QuadControl, from lines 124 to 167.
+  
+**3.Altitude Control:**
+
+* Implemented in both Python and C++.
+* In Python, this control is managed by the altitude_control method in /python/controller.py, spanning lines 112 to 139.
+* In C++, the implementation is in the ````QuadControl::AltitudeControl```` method within /cpp/src/QuadControl, from lines 169 to 212.
+
+**4.Lateral Position Control:**
+
+* Implemented in both Python and C++.
+In Python, this control is implemented in the lateral_position_control method of /python/controller.py, from lines 93 to 124.
+In C++, the corresponding method is ````QuadControl::LateralPositionControl````, located in /cpp/src/QuadControl, covering lines 215 to 267.
+
+
+**5.Yaw Control:**
+* Implemented in both Python and C++.
+* In Python, the yaw_control method in /python/controller.py implements this functionality, from lines 197 to 214.
+* In C++, it is handled by the ````QuadControl::YawControl```` method in /cpp/src/QuadControl, spanning lines 270 to 302.
+
+**6.Motor Command Calculation:**
+
+* Implemented in C++ to compute motor commands based on the commanded thrust and moments.
+* This calculation is handled by the ````QuadControl::GenerateMotorCommands```` method in /cpp/src/QuadControl, from lines 58 to 93.
 
 ## Flight Evaluation
 
