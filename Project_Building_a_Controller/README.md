@@ -135,6 +135,8 @@ To test this, return to scenario 2 and verify that the drone remains stable and 
 
 After implementing all the code, set the values of **kpYaw**, **kpPosXY**, **kpVelXY**, **kpPosZ**, and **kpVelZ** to zero. Take a deep breath, and begin tuning the controllers, starting with the altitude controller and moving on to the yaw controller. Be patient, as this process takes time.
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_Scenario_3.gif)
+
 ### Scenario 4: Non-idealities and robustness
 
 ### Scenario 5: Tracking trajectories
