@@ -137,6 +137,14 @@ After implementing all the code, set the values of **kpYaw**, **kpPosXY**, **kpV
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_Scenario_3.gif)
 
+When the scenario is passing the test, you should see this line on the standard output:
+
+````
+PASS: ABS(Quad1.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Pos.X) was less than 0.100000 for at least 1.250000 seconds
+PASS: ABS(Quad2.Yaw) was less than 0.100000 for at least 1.000000 seconds
+````
+
 ### Scenario 4: Non-idealities and robustness
 
 ### Scenario 5: Tracking trajectories
