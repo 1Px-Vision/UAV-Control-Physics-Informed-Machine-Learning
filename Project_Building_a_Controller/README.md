@@ -118,12 +118,12 @@ R_{13} \\
 R_{23} \\
 R_{33}
 \end{pmatrix} \\
-(2) & \quad \ddot{x}^c = R_{13} \\
-(3) & \quad \ddot{y}^c = R_{23} \\
-(4) & \quad \ddot{z}^c = R_{33} \\
-(5) & \quad \ddot{z}_d = \ddot{z} - g \\
-(6) & \quad c = \frac{\ddot{z}_d - g}{\ddot{z}^c} \\
-(7) & \quad \ddot{z}_d = k_p (z - z_d) + k_d (\dot{z} - \dot{z}_d) + \ddot{z}
+\quad \ddot{x}^c = R_{13} & (2) \\
+\quad \ddot{y}^c = R_{23} & (3) \\
+\quad \ddot{z}^c = R_{33} & (4) \\
+\quad \ddot{z}_d = \ddot{z} - g & (5) \\
+\quad c = \frac{\ddot{z}_d - g}{\ddot{z}^c} & (6) \\
+\quad \ddot{z}_d = k_p (z - z_d) + k_d (\dot{z} - \dot{z}_d) + \ddot{z} & (7)
 \end{align*}
 $$
 
