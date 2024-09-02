@@ -6,7 +6,7 @@ from enum import Enum, auto
 import numpy as np
 import random
 
-from utils.planning_utils import a_star, heuristic, create_grid
+from planning_utils import a_star, heuristic, create_grid
 from udacidrone import Drone
 from udacidrone.connection import MavlinkConnection
 from udacidrone.messaging import MsgID
@@ -128,7 +128,7 @@ class MotionPlanning(Drone):
             return d
 
         # Read lat0, lon0 from colliders into floating point values
-        data = np.genfromtxt('map/colliders.csv', delimiter=',', dtype=object, max_rows=1, autostrip=True, converters={0:converter, 1:converter})
+        data = np.genfromtxt('colliders.csv', delimiter=',', dtype=object, max_rows=1, autostrip=True, converters={0:converter, 1:converter})
 
         # Add data points to a global home position dictionary
         global_home_pos = dict()
@@ -156,7 +156,7 @@ class MotionPlanning(Drone):
         #print("Current Local Position: ", curr_local_pos)
 
         # Read in obstacle map
-        data = np.loadtxt('map/colliders.csv', delimiter=',', dtype='Float64', skiprows=2)
+        data = np.loadtxt('colliders.csv', delimiter=',', dtype='Float64', skiprows=2)
 
         # Define a grid for a particular altitude and safety margin around obstacles
         grid, north_offset, east_offset = create_grid(data, TARGET_ALTITUDE, SAFETY_DISTANCE)
@@ -272,13 +272,7 @@ class MotionPlanning(Drone):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--port', type=int, default=5760, help='Port number')
-    parser.add_argument('--host', type=str, default='127.0.0.1', help="host address, i.e. '127.0.0.1'")
-    args = parser.parse_args()
-
-    conn = MavlinkConnection('tcp:{0}:{1}'.format(args.host, args.port), timeout=60)
+    conn = MavlinkConnection('tcp:127.0.0.1:5760', threaded=False, PX4=False)
     drone = MotionPlanning(conn)
     time.sleep(1)
-
     drone.start()
