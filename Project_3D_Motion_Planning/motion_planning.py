@@ -144,16 +144,9 @@ class MotionPlanning(Drone):
 
         # Retrieve current global position
         curr_global_pos = self.global_position
-
-        # Debugging
-        #print("Current Global Position: ", curr_global_pos)
-
-
+        
         # Convert to current local position using global_to_local()
         curr_local_pos = global_to_local(curr_global_pos, self.global_home)
-
-        # Debugging
-        #print("Current Local Position: ", curr_local_pos)
 
         # Read in obstacle map
         data = np.loadtxt('colliders.csv', delimiter=',', dtype='Float64', skiprows=2)
