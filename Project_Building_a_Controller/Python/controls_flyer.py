@@ -205,9 +205,7 @@ class ControlsFlyer(UnityDrone):
 
 if __name__ == "__main__":
     conn = MavlinkConnection('tcp:127.0.0.1:5760', threaded=False, PX4=False)
-    #conn = WebSocketConnection('ws://127.0.0.1:5760')
     drone = ControlsFlyer(conn)
-    # drone.test_trajectory_file = './trajectories/go_north_east.txt'
     time.sleep(2)
     drone.start()
     drone.print_mission_score()
