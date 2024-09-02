@@ -29,92 +29,117 @@ valid_actions: Identifies all possible actions from a given grid cell, based on 
 ### Implementing Your Path Planning Algorithm
 #### 1. Set your global home position
 
-I developed a function named ````get_latlon_fromfile```` which reads the first line of ````colliders.csv```` to extract the latitude and longitude of the initial start position in the geodetic frame. After retrieving these values, I converted them into floating-point numbers.
-````
-lat0, lon0 = get_latlon_fromfile('colliders.csv')
-````
-Next, I use those values to establish the current home position by calling
+I utilized the ````genfromtxt```` function from numpy to read the first line of the CSV file, then iterated over the data to populate a dictionary with the global home position. Subsequently, I updated the vehicle's global home position using the floating point values lat0 and lon0 with the set_home_position function. The code for this process is presented below:
 
 ````
-self.set_home_position(lon0, lat0, 0)
+data = np.genfromtxt('map/colliders.csv', delimiter=',', dtype=object, max_rows=1, autostrip=True, converters={0:converter, 1:converter})
+
+global_home_pos = dict()
+for d in data:
+global_home_pos.update(d)
+
+# Set home position to (lon0, lat0, 0)
+self.set_home_position(global_home_pos['lon0']
+                       global_home_pos['lat0'],
+                       0.0)
+print("Home Position Set: [", global_home_pos['lon0'], ", ",  global_home_pos['lat0'], "]")
 ````
 
 #### 2. Set your current local position
 
-To determine the local position, which is relative to a pre-established global home position, I'll first need to obtain the current global position in the geodetic frame.
+The Udacidrone library includes a function that facilitates the conversion between local and global coordinates, and vice versa. In this case, I utilized the global_to_local function to transform the global coordinates sourced from the CSV file into a local coordinate system.
+
 ````
-curr_global_pos = (self._longitude, self._latitude, self._altitude)
-````
-I then transform the global position into the local ECEF frame using the ````global_to_local()```` method, which is imported from ````planning_utils.py````
-````
+# Convert to current local position using global_to_local()
 curr_local_pos = global_to_local(curr_global_pos, self.global_home)
 ````
 
 #### 3. Set grid start position from local position
+This modification enhances the flexibility of the vehicle's starting position. It enables the vehicle to begin its journey from its current location instead of always starting from the center of the map. To achieve this, I adjusted the grid_start to reflect the vehicle's current local position, subtracting any offsets for that axis. The relevant code is shown below:
 
-Retrieve the current start position and use it as the initial point for our path-planning task. I have created a method called ````get_gridrelative_position()```` to facilitate the conversion from the local frame to the grid-relative frame, which is relative to the map center.
 ````
-grid_start = get_gridrelative_position(curr_local_pos[0:2], offsets)
-````
-
-Previously, I stored the offsets obtained from the ````create_grid```` method to use in converting NED coordinates to grid coordinates
-````
-offsets = (north_offset, east_offset)
+# Define starting point on the grid based on current position rather than map center
+grid_start = (int(curr_local_pos[0])-north_offset, int(curr_local_pos[1])-east_offset)
 ````
 
 #### 4. Set grid goal position from geodetic coords
-To enhance the flexibility of specifying the goal location, I introduced two program input parameters: goal_long and goal_lat.
-````
-goal_lon='290'
-goal_lat='300'
-goal_alt='-0.147'
-drone = MotionPlanning(conn, goal_lon, goal_lat)
-````
+This step introduces flexibility in selecting the desired goal location. It enables the selection of any (latitude, longitude) within the map as the goal location and renders it on the grid. The initial action is to transform the existing coordinates into a global coordinate space before integrating the chosen (latitude, longitude) values. After updating the global goal position, the coordinates must be reverted to local coordinates for use in subsequent steps of the path planner. The corresponding code is presented below:
 
-Next, I set the goal position using the input parameter values, converted these to NED coordinates, and then determined their position relative to the grid.
 ````
-custom_goal_pos = (-122.398414, 37.7939265, 0)
-goal_local = global_to_local(custom_goal_pos, self.global_home)[0:2]
-grid_goal = get_gridrelative_position(goal_local, offsets)
+# Adapt to set goal as latitude / longitude position and convert
+# Convert current local position to global coordinates
+goal_coord = local_to_global([curr_local_pos[0], curr_local_pos[1], curr_local_pos[2]], self.global_home)
+
+# Add latitude and longitude values to the goal location
+goal_coord = (goal_coord[0] + 0.002, goal_coord[1], goal_coord[2] + 60)
+
+# Convert back to local coordinates to send to the drone
+goal_pos = global_to_local(goal_coord, self.global_home)
+grid_goal = (int(goal_pos[0])-north_offset, int(goal_pos[1])-east_offset)
 ````
 
 #### 5. Modify A* to include diagonal motion (or replace A* altogether)
+To incorporate diagonal movement into the A* Search, I modified the planning_utils file by introducing four additional actions. These actions enable the vehicle to move diagonally across the grid at a cost of sqrt(2).
 
-In the file ````planning_utils.py````, I updated the Action enumeration to incorporate additional actions along with their corresponding costs:
 ````
+# diagonal directions
 NORTH_WEST = (-1, -1, np.sqrt(2))
 NORTH_EAST = (-1, 1, np.sqrt(2))
 SOUTH_WEST = (1, -1, np.sqrt(2))
 SOUTH_EAST = (1, 1, np.sqrt(2))
 ````
-Furthermore, I incorporated the corresponding logic into the valid actions method:
+
+I also implemented validation checks to exclude diagonal actions from the list of valid actions when the vehicle is too near the edge of the map or an obstacle.
 
 ````
-# Diagonal Actions
 if x - 1 < 0 or y - 1 < 0 or grid[x - 1, y - 1] == 1:
-    valid_actions.remove(Action.NORTH_WEST)
+	valid_actions.remove(Action.NORTH_WEST)
 if x - 1 < 0 or y + 1 > m or grid[x - 1, y + 1] == 1:
-    valid_actions.remove(Action.NORTH_EAST)
+	valid_actions.remove(Action.NORTH_EAST)
 if x + 1 > n or y - 1 < 0 or grid[x + 1, y - 1] == 1:
-    valid_actions.remove(Action.SOUTH_WEST)  
-if x + 1 > n or y + 1 > m or grid[x + 1, y + 1] == 1:
-    valid_actions.remove(Action.SOUTH_EAST)
+	valid_actions.remove(Action.SOUTH_WEST)
+if x + 1 > n or y + 1 > m or grid[x + 1, y - 1] == 1:
+	valid_actions.remove(Action.SOUTH_EAST)
 ````
 
 #### 6. Cull waypoints
 
-I developed a path-pruning algorithm named prune_path, which utilizes a collinearity test to assess whether a set of points is collinear within a specified threshold.
-````
-def collinearity_test(p1, p2, p3, epsilon=1e-6):   
-    m = np.concatenate((p1, p2, p3), 0)
-    det = np.linalg.det(m)
-    return abs(det) < epsilon
-````
-In the pruning algorithm, if the points were collinear, the middle point was eliminated from the plan. This was applied to the path generated by A*:
-````
-path = prune_path(path)
-````
+The initial phase of eliminating waypoints involved developing a collinearity test. This test determines if three specified points are aligned linearly. The function used for this collinearity test is presented below:
 
+````
+def collinear(p1, p2, p3):
+	collinear = False
 
+	# Add points as rows in a matrix
+	mat = np.vstack((point(p1), point(p2), point(p3)))
+	
+	# Calculate determinant of the matrix
+	det = np.linalg.det(mat)
+
+	# Collinear is true if the determinant is less than epsilon
+	if det < epsilon:
+		collinear = True
+
+	return collinear
+
+````
+The following code snippet demonstrates path pruning through a collinearity check. If the three waypoints align in a straight line, the middle waypoint is removed from the list.
+
+````
+# Prune path to minimize number of waypoints
+i = 0
+# Loop through all waypoints in groups of three
+while i < len(path) - 2:
+	p1 = path[i]
+	p2 = path[i+1]
+	p3 = path[i+2]
+
+	# If the points are collinear, remove the middle waypoint
+	if collinear(p1, p2, p3):
+		path.remove(path[i+1])
+	else:
+		i += 1
+
+````
 
 
