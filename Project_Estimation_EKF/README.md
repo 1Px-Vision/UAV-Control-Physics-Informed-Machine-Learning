@@ -81,6 +81,7 @@ The red-dotted line represents the sigma, which does not change over time. After
 
 We need to update the state using the magnetometer measurements. Without modifying the code, we have the following data:
 
+The magnetometer update is implemented at ````/src/QuadEstimatorEKF.cpp```` line 341 to line 353
 ````
 PASS: ABS(Quad.Est.E.Yaw) was less than 0.120000 for at least 10.000000 seconds
 PASS: ABS(Quad.Est.E.Yaw-0.000000) was less than Quad.Est.S.Yaw for 67% of the time
