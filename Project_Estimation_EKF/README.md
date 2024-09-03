@@ -57,6 +57,7 @@ To complete this step, follow these procedures:
   
 These functions collectively handle all aspects of the prediction phase in the estimator.
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_1.jpg)
 
 After implementing the first part, you can see the estimation drift:
 
