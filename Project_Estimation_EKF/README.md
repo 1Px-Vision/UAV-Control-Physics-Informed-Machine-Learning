@@ -54,11 +54,11 @@ We need to implement a non-linear approach to achieve better results. First, we 
 
 To complete this step, follow these procedures:
 
-* Implement the PredictState() function.
-* Implement the GetRbgPrime() function.
-* Implement the Predict() function.
-  
-These functions collectively handle all aspects of the prediction phase in the estimator.This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
+* Implement the PredictState() function: ````/src/QuadEstimatorEKF.cpp```` line 180 to line 192.
+* Implement the GetRbgPrime() function: ````/src/QuadEstimatorEKF.cpp```` line 216 to line 234.
+* Implement the Predict() function:````/src/QuadEstimatorEKF.cpp```` line 277 to line 288.
+ 
+These functions collectively handle all aspects of the prediction phase in the estimator. This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_1.jpg)
 
