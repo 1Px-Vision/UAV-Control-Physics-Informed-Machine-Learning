@@ -25,6 +25,9 @@ In this step, we run the Sensor Noise scenario to collect data from the GPS and 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_1_Sensor_Noise.gif)
 
 ````
+PASS: ABS(Quad.GPS.X-Quad.Pos.X) was less than MeasuredStdDev_GPSPosXY for 67% of the time
+PASS: ABS(Quad.IMU.AX-0.000000) was less than MeasuredStdDev_AccelXY for 69% of the time
+
 GPS X Std: 0.7041748752871024
 Accelerometer X Std: 0.5021182612424959
 ````
