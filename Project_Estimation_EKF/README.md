@@ -19,7 +19,7 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 
 ### Implement Estimator
 
-**1. Determine the Standard Deviation of Measurement Noise for GPS X Data and Accelerometer X Data:**
+**Step 1: Determine the Standard Deviation of Measurement Noise for GPS X Data and Accelerometer X Data**
 In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_1_Sensor_Noise.gif)
@@ -33,7 +33,7 @@ Accelerometer X Std: 0.5021182612424959
 ````
 
 
-**2. Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function:**. I utilized the Quaternion class along with the 
+**Step 2: Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function**. I utilized the Quaternion class along with the 
 ````IntegrateBodyRate()```` method to perform the integration of body rates. Afterward, I converted the results back to Euler angles using 
 ````estAttitude.ToEulerRPY()````.
 
@@ -48,7 +48,7 @@ PASS: ABS(Quad.Est.E.MaxEuler) was less than 0.100000 for at least 3.000000 seco
 We need to implement a non-linear approach to achieve better results. First, we need to determine the derivatives for roll, pitch, and yaw using the following control equation. Once we have the derivatives, we can multiply them by ````𝑑𝑡```` to approximate the integral. Below is a more detailed graph following the non-linear integration:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_2_%20Attitude_Estimation_error.jpg)
-**3. Implement the Prediction Step for the Estimator**
+**Step 3: Implement the Prediction Step for the Estimator**
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_Estimador_1.gif)
 
@@ -77,7 +77,7 @@ The red-dotted line represents the sigma, which does not change over time. After
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2_Predictor.jpg)
 
-**4. Implement the magnetometer update**
+**Step 4: Implement the magnetometer update**
 
 We need to update the state using the magnetometer measurements. Without modifying the code, we have the following data:
 
@@ -95,7 +95,7 @@ To implement the update, we need to use the Magnetometer equations from the Esti
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_2.jpg)
 
-**5. Implement the GPS update**
+**Step 5: Implement the GPS update**
 
 The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications.
 
@@ -113,4 +113,5 @@ PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS_2.jpg)
 
-## Flight Evaluation
+**Step 6: Adding Your Controller**
+
