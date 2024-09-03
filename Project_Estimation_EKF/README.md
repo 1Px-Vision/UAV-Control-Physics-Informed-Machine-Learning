@@ -47,6 +47,8 @@ We need to implement a non-linear approach to achieve better results. First, we 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_2_%20Attitude_Estimation_error.jpg)
 **3. Implement the Prediction Step for the Estimator**
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_Estimador_1.gif)
+
 To complete this step, follow these procedures:
 
 * Implement the PredictState() function.
