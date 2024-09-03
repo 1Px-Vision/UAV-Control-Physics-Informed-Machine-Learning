@@ -92,6 +92,7 @@ PASS: ABS(Quad.Est.E.Yaw-0.000000) was less than Quad.Est.S.Yaw for 67% of the t
 
 To implement the update, we need to use the Magnetometer equations from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf). Once implemented, we obtained the following data:
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_2.jpg)
 
 **5. Implement the GPS update**
 
