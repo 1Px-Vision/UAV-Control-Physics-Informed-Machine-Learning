@@ -81,7 +81,7 @@ The red-dotted line represents the sigma, and it is not changing over time. Afte
 
 We need to update the state using the magnetometer measurements. Without modifying the code, we have the following data:
 
-
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Magnetometer.gif)
 
 **5. Implement the GPS update**
 
