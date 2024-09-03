@@ -79,6 +79,10 @@ The red-dotted line represents the sigma, and it is not changing over time. Afte
 
 **4. Implement the magnetometer update**
 
+We need to update the state using the magnetometer measurements. Without modifying the code, we have the following data:
+
+
+
 **5. Implement the GPS update**
 
 ## Flight Evaluation
