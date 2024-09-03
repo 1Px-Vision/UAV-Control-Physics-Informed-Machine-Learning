@@ -97,7 +97,11 @@ To implement the update, we need to use the Magnetometer equations from the Esti
 
 **Step 5: Implement the GPS update**
 
-The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications.
+The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications. The GPS update was implemented at ````/src/QuadEstimatorEKF.cpp```` line 310 to line 322. 
+
+````
+PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
+````
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS.gif)
 
