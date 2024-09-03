@@ -118,5 +118,12 @@ PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS_2.jpg)
 
 **Step 6: Adding Your Controller**
+We had been using a controller that was adapted to operate with an estimated state rather than an actual state. Now, you can evaluate how well your controller performs and adjust its tuning as needed.
+
+````
+PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
+````
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_6_Control.gif)
+
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_6_Control.jpg)
