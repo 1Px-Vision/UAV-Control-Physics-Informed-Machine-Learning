@@ -24,6 +24,14 @@ In this step, we run the Sensor Noise scenario to collect data from the GPS and 
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_1_Sensor_Noise.gif)
 
+````
+GPS X Std: 0.7041748752871024
+Accelerometer X Std: 0.5021182612424959
+````
+
+
+
+
 **2. Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function:**. I utilized the Quaternion class along with the 
 ````IntegrateBodyRate()```` method to perform the integration of body rates. Afterward, I converted the results back to Euler angles using 
 ````estAttitude.ToEulerRPY()````.
