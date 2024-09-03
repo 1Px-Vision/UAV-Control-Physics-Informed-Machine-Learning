@@ -60,7 +60,7 @@ These functions collectively handle all aspects of the prediction phase in the e
 This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
 
-In the second part, we update the covariance matrix and finalize the EKF state using the equations from the Estimation for Quadrotors paper provided by Udacity.
+In the second part, we update the covariance matrix and finalize the EKF state using the equations from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf) provided by Udacity.
 
 
 **4. Implement the magnetometer update**
