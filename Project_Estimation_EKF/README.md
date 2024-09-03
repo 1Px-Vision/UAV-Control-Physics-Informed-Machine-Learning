@@ -57,6 +57,10 @@ To complete this step, follow these procedures:
   
 These functions collectively handle all aspects of the prediction phase in the estimator.
 
+
+After implementing the first part, you can see the estimation drift:
+
+
 This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
 
