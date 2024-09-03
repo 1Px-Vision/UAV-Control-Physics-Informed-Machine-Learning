@@ -57,6 +57,12 @@ To complete this step, follow these procedures:
   
 These functions collectively handle all aspects of the prediction phase in the estimator.
 
+This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
+
+
+In the second part, we update the covariance matrix and finalize the EKF state using the equations from the Estimation for Quadrotors paper provided by Udacity.
+
+
 **4. Implement the magnetometer update**
 
 **5. Implement the GPS update**
