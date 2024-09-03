@@ -105,6 +105,10 @@ The final step before completing the EKF implementation is the GPS update. We ha
 
 To implement this update, we need to use the equations GPS from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf). After it was implemented, we received this data:
 
+````
+PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
+````
+
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS_Control.gif)
 
 ## Flight Evaluation
