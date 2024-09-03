@@ -83,6 +83,8 @@ We need to update the state using the magnetometer measurements. Without modifyi
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Magnetometer.gif)
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_1.jpg)
+
 **5. Implement the GPS update**
 
 ## Flight Evaluation
