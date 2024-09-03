@@ -15,6 +15,12 @@ The project utilizes the following sensors:
 
 In addition to the Extended Kalman Filter, a complementary filter is used to track the Roll and Pitch angles. The implementation of the EKF and Complementary Filter, including the framework, mathematical formulas, and pseudocode, is primarily based on concepts outlined in the paper Estimation for Quadrotors.
 
+## Included in this repository 
+
+* The code used src directory containing the challenge for this project
+* File Test_drone_U.ipynb code using read-to file data directory with information the steps the project.
+* This README.md file
+
 ## Project description
 
 ### Implement Estimator
