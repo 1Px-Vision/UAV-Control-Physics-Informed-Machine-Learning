@@ -55,7 +55,7 @@ To complete this step, follow these procedures:
 * Implement the GetRbgPrime() function.
 * Implement the Predict() function.
   
-These functions collectively handle all aspects of the prediction phase in the estimator.
+These functions collectively handle all aspects of the prediction phase in the estimator.This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_1.jpg)
 
@@ -63,11 +63,12 @@ After implementing the first part, you can see the estimation drift:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_1_drift.jpg)
 
-This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
-
 
 In the second part, we update the covariance matrix and finalize the EKF state using the equations from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf) provided by Udacity.
 
+
+
+The red-dotted line represents the sigma, and it is not changing over time. After the update of the covariance matrix:
 
 **4. Implement the magnetometer update**
 
