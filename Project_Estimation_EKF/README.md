@@ -18,7 +18,7 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 ## Included in this repository 
 
 * The code used src directory containing the challenge for this project
-* File Test_drone_U.ipynb code using read-to file data directory with information the steps the project.
+* File Results_Estimation.ipynb code using read-to file data directory with information on the steps of the project.
 * This README.md file
 
 ## Project description
