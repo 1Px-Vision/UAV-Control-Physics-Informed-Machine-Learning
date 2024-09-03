@@ -66,7 +66,7 @@ After implementing the first part, you can see the estimation drift:
 
 In the second part, we update the covariance matrix and finalize the EKF state using the equations from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf) provided by Udacity.
 
-
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_Estimador_2.gif)
 
 The red-dotted line represents the sigma, and it is not changing over time. After the update of the covariance matrix:
 
