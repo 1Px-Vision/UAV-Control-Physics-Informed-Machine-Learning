@@ -61,6 +61,7 @@ These functions collectively handle all aspects of the prediction phase in the e
 
 After implementing the first part, you can see the estimation drift:
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_1_drift.jpg)
 
 This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
