@@ -38,6 +38,8 @@ Accelerometer X Std: 0.5021182612424959
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_2_%20Attitude_Estimation.jpg)
 
+We need to implement a non-linear approach to achieve better results. First, we need to determine the derivatives for roll, pitch, and yaw using the following control equation. Once we have the derivatives, we can multiply them by ````𝑑𝑡```` to approximate the integral. Below is a more detailed graph following the non-linear integration:
+
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_2_%20Attitude_Estimation_error.jpg)
 **3. Implement the Prediction Step for the Estimator**
 
