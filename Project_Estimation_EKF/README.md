@@ -85,6 +85,9 @@ We need to update the state using the magnetometer measurements. Without modifyi
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_1.jpg)
 
+To implement the update, we need to use the Magnetometer equations from the Estimation for Quadrotors [paper](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Estimation_for_Quadrotors.pdf). Once implemented, we obtained the following data:
+
+
 **5. Implement the GPS update**
 
 ## Flight Evaluation
