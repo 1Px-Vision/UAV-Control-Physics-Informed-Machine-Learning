@@ -72,6 +72,8 @@ In the second part, we update the covariance matrix and finalize the EKF state u
 
 The red-dotted line represents the sigma, and it is not changing over time. After the update of the covariance matrix:
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2_Predictor.jpg)
+
 **4. Implement the magnetometer update**
 
 **5. Implement the GPS update**
