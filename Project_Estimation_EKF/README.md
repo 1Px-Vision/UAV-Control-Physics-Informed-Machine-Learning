@@ -73,7 +73,7 @@ In the second part, we update the covariance matrix and finalize the EKF state u
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2.jpg)
 
-The red-dotted line represents the sigma, and it is not changing over time. After the update of the covariance matrix:
+The red-dotted line represents the sigma, which does not change over time. After the update of the covariance matrix:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2_Predictor.jpg)
 
@@ -95,5 +95,8 @@ To implement the update, we need to use the Magnetometer equations from the Esti
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_2.jpg)
 
 **5. Implement the GPS update**
+
+The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without making any other modifications.
+
 
 ## Flight Evaluation
