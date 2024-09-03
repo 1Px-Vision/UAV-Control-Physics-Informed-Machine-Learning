@@ -68,6 +68,8 @@ In the second part, we update the covariance matrix and finalize the EKF state u
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_Estimador_2.gif)
 
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2.jpg)
+
 The red-dotted line represents the sigma, and it is not changing over time. After the update of the covariance matrix:
 
 **4. Implement the magnetometer update**
