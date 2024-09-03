@@ -97,7 +97,9 @@ To implement the update, we need to use the Magnetometer equations from the Esti
 
 **5. Implement the GPS update**
 
-The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without making any other modifications.
+The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications.
+
+![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS.gif)
 
 
 ## Flight Evaluation
