@@ -60,9 +60,9 @@ We need to implement a non-linear approach to achieve better results. First, we 
 
 To complete this step, follow these procedures:
 
-* Implement the PredictState() function: ````/src/QuadEstimatorEKF.cpp```` line 180 to line 192.
-* Implement the GetRbgPrime() function: ````/src/QuadEstimatorEKF.cpp```` line 216 to line 234.
-* Implement the Predict() function:````/src/QuadEstimatorEKF.cpp```` line 277 to line 288.
+* Implement the PredictState() function: ````/src/QuadEstimatorEKF.cpp```` line 147 to line 179.
+* Implement the GetRbgPrime() function: ````/src/QuadEstimatorEKF.cpp```` line 181 to line 218.
+* Implement the Predict() function:````/src/QuadEstimatorEKF.cpp```` line 220 to line 269.
  
 These functions collectively handle all aspects of the prediction phase in the estimator. This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
