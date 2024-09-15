@@ -17,15 +17,13 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 
 ## Included in this repository 
 
-* The code used src directory containing the challenge for this project
+* The code used cpp directory containing the challenge for this project
 * File Results_Estimation.ipynb code using read-to file data directory with information on the steps of the project.
 * This README.md file
 
 ## Project description
 
-### Implement Estimator
-
-**Step 1:Sensor noise**
+### Step 1: Sensor noise
 
 Determine the Standard Deviation of Measurement Noise for GPS and Accelerometer X Data ````cpp/config/06_SensorNoise.txt````. In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
 
