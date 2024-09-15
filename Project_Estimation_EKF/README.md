@@ -38,7 +38,9 @@ Accelerometer X Std: 0.5021182612424959
 ````
 
 
-**Step 2: Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function**. I utilized the Quaternion class along with the 
+### Step 2:Attitude Estimation
+
+Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function. I utilized the Quaternion class along with the 
 ````IntegrateBodyRate()```` method to perform the integration of body rates. Afterward, I converted the results back to Euler angles using 
 ````estAttitude.ToEulerRPY()````.
 
