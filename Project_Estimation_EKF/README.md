@@ -18,7 +18,11 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 ## Included in this repository 
 
 * The code used cpp directory containing the challenge for this project
-* File Results_Estimation.ipynb code using read-to file data directory with information on the steps of the project.
+* ````cpp/config/QuadEstimatorEKF.txt````: This file contains the parameters for tuning the EKF
+* ````cpp/src/QuadEstimatorEKF.cpp````: This is the EKF implementation. There are sections of the code black to be filled by us.
+* ````cpp/src/QuadControl.cpp````: This is the cascade PID control implemented on the last project.
+* ````cpp/config/QuadControlParams.txt````: It contains our beloved parameters for the control code. Again, there is a set of these parameters on the seed project. 
+* File ````Results_Estimation.ipynb```` code using read-to file data directory with information on the steps of the project.
 * This README.md file
 
 ## Project description
@@ -38,11 +42,9 @@ Accelerometer X Std: 0.5021182612424959
 ````
 
 
-### Step 2:Attitude Estimation
+### Step 2: Attitude Estimation
 
-Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function. I utilized the Quaternion class along with the 
-````IntegrateBodyRate()```` method to perform the integration of body rates. Afterward, I converted the results back to Euler angles using 
-````estAttitude.ToEulerRPY()````.
+Implement an improved rate gyro attitude integration scheme in the UpdateFromIMU() function. The implementation of this integration is at ````cpp/src/QuadEstimatorEKF.cpp```` from line 99 to line 121. This scenario test output:
 
 ````
 PASS: ABS(Quad.Est.E.MaxEuler) was less than 0.100000 for at least 3.000000 seconds
@@ -55,15 +57,17 @@ PASS: ABS(Quad.Est.E.MaxEuler) was less than 0.100000 for at least 3.000000 seco
 We need to implement a non-linear approach to achieve better results. First, we need to determine the derivatives for roll, pitch, and yaw using the following control equation. Once we have the derivatives, we can multiply them by ````𝑑𝑡```` to approximate the integral. Below is a more detailed graph following the non-linear integration:
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_2_%20Attitude_Estimation_error.jpg)
-**Step 3: Implement the Prediction Step for the Estimator**
+### Step 3: Prediction Step
+
+Implement the Prediction Step for the Estimator
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_Estimador_1.gif)
 
 To complete this step, follow these procedures:
 
-* Implement the PredictState() function: ````/src/QuadEstimatorEKF.cpp```` line 147 to line 179.
-* Implement the GetRbgPrime() function: ````/src/QuadEstimatorEKF.cpp```` line 181 to line 218.
-* Implement the Predict() function:````/src/QuadEstimatorEKF.cpp```` line 220 to line 269.
+* Implement the PredictState() function: ````cpp/src/QuadEstimatorEKF.cpp```` line 180 to line 192.
+* Implement the GetRbgPrime() function: ````cpp/src/QuadEstimatorEKF.cpp```` line 216 to line 234.
+* Implement the Predict() function:````cpp/src/QuadEstimatorEKF.cpp```` line 277 to line 288.
  
 These functions collectively handle all aspects of the prediction phase in the estimator. This step consists of two parts. First, we predict the state using the acceleration measurements. Without altering the code, we obtain the following data:
 
@@ -84,11 +88,11 @@ The red-dotted line represents the sigma, which does not change over time. After
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_3_%20Estimador_2_Predictor.jpg)
 
-**Step 4: Implement the magnetometer update**
+### Step 4: Implement the magnetometer update
 
 We need to update the state using the magnetometer measurements. Without modifying the code, we have the following data:
 
-The magnetometer update is implemented at ````/src/QuadEstimatorEKF.cpp```` line 297 to line 325
+The magnetometer update is implemented at ````cpp/src/QuadEstimatorEKF.cpp```` line 341 to line 353
 ````
 PASS: ABS(Quad.Est.E.Yaw) was less than 0.120000 for at least 10.000000 seconds
 PASS: ABS(Quad.Est.E.Yaw-0.000000) was less than Quad.Est.S.Yaw for 67% of the time
@@ -102,9 +106,9 @@ To implement the update, we need to use the Magnetometer equations from the Esti
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_4_Mag_2.jpg)
 
-**Step 5: Implement the GPS update**
+### Step 5: Implement the GPS update
 
-The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications. The GPS update was implemented at ````/src/QuadEstimatorEKF.cpp```` line 271 to line 295. 
+The final step before completing the EKF implementation is the GPS update. We have the following data after removing the ideal estimator from the code without any other modifications. The GPS update was implemented at ````cpp/src/QuadEstimatorEKF.cpp```` line 310 to line 322. 
 
 ````
 PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
@@ -124,7 +128,7 @@ PASS: ABS(Quad.Est.E.Pos) was less than 1.000000 for at least 20.000000 seconds
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_5_GPS_2.jpg)
 
-**Step 6: Adding Your Controller (Optional)**
+### Step 6: Adding Your Controller (Optional)
 
 We had been using a controller that was adapted to operate with an estimated state rather than an actual state. Now, you can evaluate how well your controller performs and adjust its tuning as needed.
 
