@@ -37,7 +37,8 @@ In this scenario, we modify the drone's mass in the /cpp/config/06_SensorNoise.t
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Building_a_Controller/Results/Result_scenario_1.gif)
 
 ````
-PASS: ABS(Quad.PosFollowErr) was less than 0.500000 for at least 0.800000 seconds
+PASS: ABS(Quad.GPS.X-Quad.Pos.X) was less than MeasuredStdDev_GPSPosXY for 67% of the time
+PASS: ABS(Quad.IMU.AX-0.000000) was less than MeasuredStdDev_AccelXY for 69% of the time
 ````
 
 ### Scenario 2: Body rate and roll/pitch control
