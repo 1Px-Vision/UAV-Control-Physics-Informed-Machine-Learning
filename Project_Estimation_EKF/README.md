@@ -25,8 +25,9 @@ In addition to the Extended Kalman Filter, a complementary filter is used to tra
 
 ### Implement Estimator
 
-**Step 1: Determine the Standard Deviation of Measurement Noise for GPS X Data and Accelerometer X Data**
-In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
+**Step 1:Sensor noise**
+
+Determine the Standard Deviation of Measurement Noise for GPS and Accelerometer X Data ````cpp/config/06_SensorNoise.txt````. In this step, we run the Sensor Noise scenario to collect data from the GPS and IMU accelerometer. We then calculate the standard deviation of the measurement noise for both the GPS X and accelerometer X data.
 
 ![](https://github.com/1Px-Vision/UAV-Control-Physics-Informed-Machine-Learning/blob/main/Project_Estimation_EKF/Results/Scenario_1_Sensor_Noise.gif)
 
